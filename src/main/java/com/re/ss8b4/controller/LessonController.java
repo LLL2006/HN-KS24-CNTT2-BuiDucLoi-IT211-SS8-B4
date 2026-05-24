@@ -14,7 +14,7 @@ import java.util.*;
 @Validated
 public class LessonController {
 
-    private final LessonService lessonService;
+    private final giLessonService lessonService;
 
     @GetMapping("/watch")
     public Map<String, Object> watchLesson(
@@ -25,7 +25,6 @@ public class LessonController {
                     message = "lessonId phải lớn hơn 0")
             Long lessonId
     ) {
-
         String videoUrl =
                 lessonService.watchLesson(lessonId, username);
 
